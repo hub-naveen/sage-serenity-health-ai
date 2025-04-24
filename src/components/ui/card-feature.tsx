@@ -7,13 +7,15 @@ interface CardFeatureProps {
   title: string;
   description: string;
   className?: string;
+  style?: React.CSSProperties; // Add style prop
 }
 
 const CardFeature: React.FC<CardFeatureProps> = ({ 
   icon, 
   title, 
   description, 
-  className 
+  className,
+  style // Add style to the destructured props
 }) => {
   return (
     <div 
@@ -21,6 +23,7 @@ const CardFeature: React.FC<CardFeatureProps> = ({
         "bg-card p-6 rounded-lg border border-border shadow-sm card-hover", 
         className
       )}
+      style={style} // Add the style prop to the div
     >
       <div className="mb-4">
         {icon}
